@@ -1,0 +1,20 @@
+
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/ytdl.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/ytdl/dlaudio",
+      "dest": "/api/ytdl.js"
+    },
+    {
+      "src": "/downloads/(.*)",
+      "dest": "/api/ytdl.js"
+    }
+  ]
+}
